@@ -10,6 +10,7 @@ import {
   DialogClose,
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
+import TimePicker from '@/components/TimePicker.vue'
 
 const store = useScheduleStore()
 const { activeDay } = storeToRefs(store)
@@ -196,17 +197,9 @@ defineExpose({ openAdd, openEdit })
           <div>
             <label class="text-sm text-gray-500 mb-2 block">选择时间</label>
             <div class="flex items-center gap-2 bg-gray-100 rounded-2xl px-4 py-3">
-              <input
-                type="time"
-                v-model="newTimeStart"
-                class="flex-1 h-10 rounded-xl border-0 bg-white px-3 text-base outline-none text-center cursor-pointer"
-              />
-              <span class="text-gray-400 text-lg font-light">—</span>
-              <input
-                type="time"
-                v-model="newTimeEnd"
-                class="flex-1 h-10 rounded-xl border-0 bg-white px-3 text-base outline-none text-center cursor-pointer"
-              />
+              <TimePicker v-model="newTimeStart" placeholder="开始" />
+              <span class="text-gray-400 text-lg font-light shrink-0">—</span>
+              <TimePicker v-model="newTimeEnd" placeholder="结束" />
             </div>
           </div>
           <!-- 活动填写 -->

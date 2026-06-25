@@ -26,7 +26,10 @@ const scheduleDialog = ref<InstanceType<typeof ScheduleDialog> | null>(null)
 </script>
 
 <template>
-  <div class="w-screen h-screen flex flex-col items-center mx-auto bg-[#f2f2f7] overflow-y-auto">
+  <div
+    class="w-screen h-screen flex flex-col items-center mx-auto bg-[#f2f2f7] overflow-y-auto"
+    style="padding-top: env(safe-area-inset-top); padding-bottom: env(safe-area-inset-bottom)"
+  >
     <Accordion type="single" collapsible class="w-90">
       <AccordionItem value="week-picker" class="border-none">
         <AccordionTrigger class="mx-auto w-50 flex-none pt-0 pb-2.5 [&>svg]:hidden">
